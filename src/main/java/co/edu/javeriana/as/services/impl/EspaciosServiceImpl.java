@@ -30,6 +30,13 @@ public class EspaciosServiceImpl implements EspaciosService {
 	  }
 
 	@Override
+	public List<Historial> getHistorial() {
+		return historialRepository.findAll();
+	}
+	public List<Edificio> getEdificios() {
+		return edificiosRepository.findAll();
+	}
+	@Override
 	public double getPromedioEnergiaPorFechaActual() {
 		String fechaActual = LocalDate.now().toString();
 		List<Historial> historialesFechaActual = historialRepository.findByFecha(fechaActual);

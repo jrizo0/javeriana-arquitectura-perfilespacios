@@ -2,6 +2,9 @@ package co.edu.javeriana.as.rest;
 
 import co.edu.javeriana.as.exceptions.EdificioNotFoundException;
 import co.edu.javeriana.as.exceptions.EspacioNotFoundException;
+import co.edu.javeriana.as.model.Edificio;
+import co.edu.javeriana.as.model.Espacio;
+import co.edu.javeriana.as.model.Historial;
 import co.edu.javeriana.as.services.EspaciosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @RestController
 //@RequestMapping("espacios")
@@ -20,10 +24,25 @@ public class EspaciosController {
     @Autowired
     private EspaciosService espaciosService;
 
-    @GetMapping("holamundo")
+    @GetMapping("test")
     public String saludar() {
-        return "hola";
+        return "test ok";
     }
+
+    @GetMapping("getHistorial")
+    public List<Historial> getHistorial() {
+        return espaciosService.getHistorial();
+    }
+
+    @GetMapping("getEdificios")
+    public List<Edificio> getEdificios() {
+        return espaciosService.getEdificios();
+    }
+    @GetMapping("getEspacios")
+    public List<Espacio> getEspacios() {
+        return espaciosService.getEspacios();
+    }
+
 
     @GetMapping("promEnergiaFechaActual")
     public String promEnergiaFechaActual() {

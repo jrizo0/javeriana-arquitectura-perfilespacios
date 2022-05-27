@@ -9,9 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EntityScan("com.jpa.model")
-@ComponentScan({"com.http.requests", "com.services"})
-@EnableJpaRepositories("com.jpa.queries")
 public class PerfilespaciosApplication extends SpringBootServletInitializer {
 
     @Override
@@ -22,15 +19,4 @@ public class PerfilespaciosApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(PerfilespaciosApplication.class, args);
     }
-/*
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:8080");
-            }
-        };
-    }
-*/
 }

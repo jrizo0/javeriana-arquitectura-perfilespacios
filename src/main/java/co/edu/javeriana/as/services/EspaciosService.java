@@ -2,7 +2,9 @@ package co.edu.javeriana.as.services;
 
 import co.edu.javeriana.as.exceptions.EdificioNotFoundException;
 import co.edu.javeriana.as.exceptions.EspacioNotFoundException;
+import co.edu.javeriana.as.model.Edificio;
 import co.edu.javeriana.as.model.Espacio;
+import co.edu.javeriana.as.model.Historial;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,5 +20,7 @@ public interface EspaciosService {
 	public double getPromedioAforoEdificioPorFechaActual(int edificioId) throws EdificioNotFoundException;
 
 	public List<Espacio> getEspacios();
+	public List<Historial> getHistorial();
+	public List<Edificio> getEdificios();
 
 }
